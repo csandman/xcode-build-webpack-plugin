@@ -1,6 +1,6 @@
 {
   "name": "xcode-build-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build a project with Xcode after outputing a Webpack bundle",
   "type": "module",
   "source": "src/xcode-build-webpack-plugin.js",
