@@ -1,0 +1,63 @@
+{
+  "name": "xcode-build-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Build a project with Xcode after outputing a Webpack bundle",
+  "type": "module",
+  "source": "src/xcode-build-webpack-plugin.js",
+  "module": "dist/xcode-build-webpack-plugin.js",
+  "main": "dist/xcode-build-webpack-plugin.cjs",
+  "exports": {
+    ".": {
+      "require": "./dist/xcode-build-webpack-plugin.cjs",
+      "default": "./dist/xcode-build-webpack-plugin.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "microbundle watch --target=node --name=XcodeBuildPlugin -f=cjs,esm",
+    "prebuild": "rimraf dist",
+    "build": "microbundle build --target=node --name=XcodeBuildPlugin -f=cjs,esm",
+    "lint:fix": "eslint src/* --fix",
+    "prettier:write": "prettier --write src/*",
+    "format": "npm run lint:fix && npm run prettier:write",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csandman/xcode-build-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "xcode",
+    "build",
+    "build-tools"
+  ],
+  "author": "Chris Sandvik <chris.sandvik@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csandman/xcode-build-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/csandman/xcode-build-webpack-plugin",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.0",
+    "microbundle": "^0.14.0",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "command-exists-promise": "^2.0.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.prettier:write": "prettier --write"
+  }
+}
