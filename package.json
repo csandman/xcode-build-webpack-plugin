@@ -57,7 +57,9 @@
     "command-exists-promise": "^2.0.2"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.prettier:write": "prettier --write"
+    "src/*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }
