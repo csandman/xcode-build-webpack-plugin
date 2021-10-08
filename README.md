@@ -5,7 +5,7 @@ This is a plugin for running the `xcodebuild` command after a Webpack build has 
 ## Installation
 
 ```sh
-npm i xcode-build-webpack-plugin
+npm i -D xcode-build-webpack-plugin
 ```
 
 ## Basic Usage
